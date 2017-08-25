@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>	
+
+		<div id="app">
+			  总和:{{countSum}}
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			     let vm = new Vue({
+			     	el:"#app",  // 注意要添加#号
+			     	// 实例vm数据
+			     	data:{
+			     		num1:1,
+			     		num2:3,
+			     		num3:6
+			     	},
+			     	computed:{
+			     		/*countSum(){
+			     			return this.num1+this.num2+this.num3
+			     		}等价于下面的,圆括号等于function*/
+			     		countSum:function(){
+			     			return this.num1+this.num2+this.num3
+			     		}
+			     	}
+			     })
+		</script>
+</body>
+</html>

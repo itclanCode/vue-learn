@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+		<div id="app">
+			   {{a}}
+			  <button v-on:click="plus">加{{a}}</button>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			     let vm = new Vue({
+			     	// 挂载元素
+			     	el:"#app",
+			     	// 实例vm的数据
+			     	data:{
+			     		a:0
+			     	},
+			     	// 方法
+			     	methods:{
+			     		plus(){
+			     			return this.a++;
+			     		}
+			     	},
+			     	watch:{
+			     		a(){
+			     			console.log("有变化了,新的值");
+			     			console.log(this.a);
+			     		}
+			     	}
+			     })
+			     /*
+				    watch选项是Vue提供用于检测指定的数据发生改变的api
+				    上面点击按钮a的值加1的例子,不就是数据发生变化了吗?我们就用watch选项来监听数字a是否发生了变化,如果监听到了变化,我们就在控制台输入以下a的最新值
+				    我们在点击按钮的时候,a的值加1发生了变化,而此时watch监听到了它的变化,便在控制台输出了我们指定的内容
+
+			     */
+		</script>
+</body>
+</html>

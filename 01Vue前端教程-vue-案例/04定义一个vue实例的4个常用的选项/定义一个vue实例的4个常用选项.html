@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>定义一个vue实例的4个常用选项</title>
+</head>
+<body>
+		<div id="app">
+			   数字1:{{num1 | toInt}}<br />
+			   数字2:{{num2 | toInt}}<br />
+			   数字3:{{num3 | toInt}}
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			   	 let vm = new Vue({
+			   	 	 // 挂载元素
+			   	 	 el:'#app',
+			   	 	 // 实例vm的数据
+			   	 	 data:{
+			   	 	 	num1:33.44,
+			   	 	 	num2:23.55,
+			   	 	 	num3:56.11
+			   	 	 },
+			   	 	 // 过滤器
+			   	 	 filters:{
+			   	 	 	/*toInt(value){
+			   	 	 	  return parseInt(value);
+			   	 	 	}等价于,上面的()代表的就是function*/
+			   	 	 	toInt:function(value){
+			   	 	 	  return parseInt(value);
+			   	 	 	}
+			   	 	 }
+			   	 })
+			   	 /*
+			       参数对象除了el和data属性之外,还多了filers属性,它的值也是一个对象，里面定义了一个叫toInt()方法，传入了一个value参数,函数的作用就是把传入的参数value,简单的转成一个整数并return回去
+
+
+			   	 */
+		</script>
+</body>
+</html>

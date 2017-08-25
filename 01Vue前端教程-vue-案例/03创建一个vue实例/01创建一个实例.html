@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+		<div id="app">
+			  我是{{name}}
+			  今年芳龄{{age}}岁
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			     // 创建一个vue实例语法
+			     // 1.let vm = new Vue({})
+				 // 2.设置数据,参数对象不再是一个空对象,它包含一个属性data,而data的值也是一个对象,这个对象就是我们给实例vm设置的数据了
+				 /*let vm = new Vue({
+				 	 // 实例vm的数据
+				 	 data:{
+				 	 	name:"小三",
+				 		age:18
+				 	 }
+				 })*/
+				 // 3. 挂载元素,我们看到参数不但有属性data,还多了个属性,el,el参数提供一个在页面上已经存在的DOM元素,作为我们实例vm的挂载目标,表示我们的实例vm和id为app,的DOM节点就关联起来了的
+				 /*let vm = new Vue({
+				 	 el:"#app",
+				 	 // 实例vm的数据
+				 	 data:{
+				 	 	name:"小三",
+				 		age:18
+				 	 }
+				 })*/
+				 // 4. 渲染,实例vm创建好了的,数据data有,DOMji节点关联起来,最后就是把vm的数据绑定到指定的视图上,也就是数据渲染
+				 let vm = new Vue({
+				 	 el:"#app",
+				 	 // 实例vm的数据
+				 	 data:{
+				 	 	name:"小三",
+				 		age:18
+				 	 }
+				 })
+				 /*
+					只需要用一个双大括号:{{}}即可,{{name}}和{{age}}就是我们给实例vm设置的数据name和age,我们用{{}}可以直接读取到他们的值
+					我们访问页面,就会看到vm的数据data就会被成功的渲染出来,成功的创建一个vue实例,并把它的数据渲染在视图上了
+				 */
+		</script>
+</body>
+</html>

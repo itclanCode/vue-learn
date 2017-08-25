@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>methods</title>
+</head>
+<body>
+		<div id="app">
+			  {{a}}
+			  <button v-on:click="plus">加{{a}}</button>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			      let vm = new Vue({
+			      	 // 挂载元素
+			      	 el:"#app",
+			      	 // 实例vm的数据
+			      	 data:{
+			      	 	a:0
+			      	 },
+			      	 // 方法
+			      	 methods:{
+			      	 	/*plus(){
+			      	 		return this.a++;
+			      	 	}*/
+			      	 	plus:function(){
+			      	 		return this.a++;
+			      	 	}
+			      	 }
+			      })
+			      /*
+					 在vue中通过v-on:指令来绑定事件,我们点击按钮,methods中的方法plus()就会被调用,实现给a的值加1,并更新视图
+			      */
+		</script>
+</body>
+</html>
