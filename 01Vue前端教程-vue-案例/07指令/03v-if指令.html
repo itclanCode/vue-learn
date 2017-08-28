@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>v-if指令</title>
+</head>
+<body>
+		<div id="app">
+			  <p v-if="if_1">我是true</p>
+			  <p v-if="if_2">我是false</p>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			      let vm = new Vue({
+			      	  el:"#app",
+			      	  data:{
+			      	  	 if_1:true,
+			      	  	 if_2:false
+			      	  }
+			      })
+		</script>
+		<!-- 
+			根据表达式的值的真假条件渲染元素。在切换时元素及它的数据绑定 / 组件被销毁并重建
+			v-if:指令的取值也是为true或false,它控制元素是否需要被渲染出来
+			注意的是v-if后面的变量名:if_1只能用下划线,不能用横杠
+			当后面的状态为false时,表示的是去除DOM元素,不占位置,被一行注释给代替了的
+			怎么区分v-show与v-if:
+			共同点:都是控制元素的显示与隐藏,true:表示显示,false表示隐藏
+			频繁的切换显示/隐藏的用v-show,如果运行后不太可能切换显示/隐藏的,就用v-if
+
+		 -->
+</body>
+</html>

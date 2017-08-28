@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+		<div id="app">
+			 {{age}}
+		</div>
+		<!-- 绑定html元素 -->
+		<div id="app1" v-html="name">
+			 
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			     let vm = new Vue({
+			     	 el:"#app",
+			     	 data:{
+			     	 	age:10
+			     	 }
+			     });
+			     let vm1 = new Vue({
+			     	 el:"#app1",
+			     	 data:{
+			     	 	name:"<strong>我是strong标签,加粗</strong>"
+			     	 }
+			     })
+		</script>
+</body>
+</html>

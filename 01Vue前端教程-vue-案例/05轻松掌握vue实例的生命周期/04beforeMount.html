@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>beforeMount</title>
+</head>
+<body>
+		<div id="app">
+			  {{name}}
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			     var vm = new Vue({
+			     	 el:"#app",
+			     	 data:{
+			     	 	name:'font-end'
+			     	 },
+			     	 beforeCreate(){
+			     	 	console.log("即将创建");
+			     	 	console.log(this.$data);
+			     	 	console.log(this.$el);
+			     	 },
+			     	 created(){
+			     	 	console.log("创建完毕");
+			     	 	console.log(this.$data);
+			     	 	console.log(this.$el);
+			     	 },
+			     	 beforeMount(){
+			     	 	console.log("即将挂载");
+			     	 	console.log(this.$el);
+			     	 }
+			     })
+		</script>
+		<!-- 
+			 此时的$el不在是undefined,而是成功的关联到我们指定的dom节点<div id="app"></div>,但此时{{name}}还没有被成功的渲染到我们的data中的数据
+
+		 -->
+</body>
+</html>

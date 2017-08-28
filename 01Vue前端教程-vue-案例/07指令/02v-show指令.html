@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+		<div id="app">
+			   <p v-show="show1">我是true显示</p>
+			   <p v-show="show2">我是false隐式</p>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			      let vm = new Vue({
+			      	  el:"#app",
+			      	  data:{
+			      	  	 show1:true,
+			      	  	 show2:false
+			      	  }
+			      });
+			      /*
+					  v-show后面的状态:true表示显示,false,表示隐藏
+					  当后面的值为false时,只是隐藏DOM元素,但是仍然占位置
+			      */
+		</script>
+</body>
+</html>

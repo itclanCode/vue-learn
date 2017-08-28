@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>绑定属性</title>
+</head>
+<body>
+
+		<div id="app">
+			  <a v-bind:href="link">中信易家</a>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			     let vm = new Vue({
+			     	 el:"#app",
+			     	 data:{
+			     	 	link:"http://item.citic-mall.com"
+			     	 }
+			     })
+		</script>
+		<!-- 
+			绑定属性
+			前面两个都是控制视图展示文本内容,有时候,html标签的属性也很重要,比如:<a>标签的href属性,img标签的src属性等,vue中如何将data中的数据绑定为这些属性的值呢,还是用双大括号{{}}的写法?
+			当然不是,这里不需要使用双大括号{{}},我们用v-bind指令
+		 	在视图中的a标签,我们在<a></a>标签加上v-bind来修饰href属性,而它的值就是data中的属性link,来看看解析渲染的html页面效果
+		 -->
+</body>
+</html>

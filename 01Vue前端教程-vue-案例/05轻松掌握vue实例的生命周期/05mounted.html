@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>mounted</title>
+</head>
+<body>
+
+		<div id="app">
+				{{name}}
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			      var vm = new Vue({
+			      	  el:"#app",
+			      	  data:{
+			      	  	 name:"小白"
+			      	  },
+			      	  beforeCreate(){
+			      	  	 console.log("即将创建");
+				     	 console.log(this.$data);
+				     	 console.log(this.$el);
+			      	  },
+			      	  created(){
+			      	  	console.log("创建完毕");
+			     	 	console.log(this.$data);
+			     	 	console.log(this.$el);
+			     	 },
+			     	 beforeMount(){
+			     	 	console.log("即将挂载");
+			     	 	console.log(this.$el);
+			     	 },
+			     	 mounted(){
+			     	 	console.log("挂载完毕");
+			     	 	console.log(this.$el);
+			     	 }
+			      })
+		</script>
+		<!-- 
+			 mounted也就是挂载完毕阶段,到了这个阶段,数据就会被成功的渲染出来,我们编写mounted的钩子,打印$sel看看
+
+		 -->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>updated</title>
+
+</head>
+<body>
+		<div id="app">
+			  {{name}}
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			      let vm = new Vue({
+			      	 el:"#app",
+			      	 data:{
+			      	 	name:"欢欢"
+			      	 },
+			      	 beforeCreate(){
+			      	  	 console.log("即将创建");
+				     	 console.log(this.$data);
+				     	 console.log(this.$el);
+			      	  },
+			      	 created(){
+			      	  	console.log("创建完毕");
+			     	 	console.log(this.$data);
+			     	 	console.log(this.$el);
+			     	 },
+			     	 beforeMount(){
+			     	 	console.log("即将挂载");
+			     	 	console.log(this.$el);
+			     	 },
+			     	 mounted(){
+			     	 	console.log("挂载完毕");
+			     	 	console.log(this.$el);
+			     	 },
+			     	 beforeUpdate(){
+			     	 	console.log('=即将更新渲染=');
+			     	 	let name = this.$refs.app.innerHTML;
+			     	 	console.log("name:"+name);
+			     	 },
+			     	 updated(){
+			     	 	console.log("==更新成功==");
+			     	 	let name = this.$refs.app.innerHTML;
+			     	 	console.log('name:'+name);
+			     	 },
+			     	 beforeDestory(){
+			     	 	console.log("销毁之前");
+			     	 },
+			     	 destroyed(){
+			     	 	console.log("销毁成功");
+			     	 }
+			      })
+			      // destroyed,成功销毁之后,会触发destroyed钩子,此时该实例的关联已经被清除,它与视图之间也被解绑
+			      /*案例:我们通过在销毁前通过控制台修改实例的name,和销毁之后再次修改,看看情况
+				  销毁之前,修改name的值,可以成功修改视图显示的内容为:更新视图,一旦效用实例的$destroy()方法销毁之后,实例与视图的关系解绑,在修改name的值,已于事无补,视图再也不会更新了,说明实例成功被销毁了
+
+			      */
+			      // actived:keep-alive组件被激活的时候调用
+			      // deactivated:keep-alive组件停用时调用
+		</script>
+</body>
+</html>

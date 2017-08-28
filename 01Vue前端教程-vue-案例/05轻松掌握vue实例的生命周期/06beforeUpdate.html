@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>beforeUpdate</title>
+</head>
+<body>
+		<div ref = "app" id="app">
+			  {{name}}
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			     let vm = new Vue({
+			     	 el:"#app",
+			     	 data:{
+			     	 	name:"vueJS"
+			     	 },
+			     	 beforeCreate(){
+			      	  	 console.log("即将创建");
+				     	 console.log(this.$data);
+				     	 console.log(this.$el);
+			      	  },
+			      	  created(){
+			      	  	console.log("创建完毕");
+			     	 	console.log(this.$data);
+			     	 	console.log(this.$el);
+			     	 },
+			     	 beforeMount(){
+			     	 	console.log("即将挂载");
+			     	 	console.log(this.$el);
+			     	 },
+			     	 mounted(){
+			     	 	console.log("挂载完毕");
+			     	 	console.log(this.$el);
+			     	 },
+			     	 beforeUpdate(){
+			     	 	console.log('=即将更新渲染=');
+			     	 	let name = this.$refs.app.innerHTML;
+			     	 	console.log("name:"+name);
+			     	 }
+			     })
+		</script>
+</body>
+</html>

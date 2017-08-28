@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>v-text指令</title>
+</head>
+<body>
+		<!-- v-text:指令用于更新标签包含的文本,它的作用跟双大括号的效果一样, -->
+		<div id="app">
+			  <p v-text="msg"></p>
+			  <p>{{msg}}</p>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			     let vm = new Vue({
+			     	 el:"#app",
+			     	 data:{
+			     	 	msg:'hello,vuejs'
+			     	 }
+			     })
+		</script>
+</body>
+</html>

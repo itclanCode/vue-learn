@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+		<div id="app">
+			  <button :disabled="dis_true">我是true</button>
+			  <button :disabled="dis_false">我是false</button>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			     let vm = new Vue({
+			     	 el:"#app",
+			     	 data:{
+			     	 	dis_true:true,
+			     	 	dis_false:false
+			     	 }
+			     })
+		</script>
+</body>
+</html>

@@ -6,21 +6,31 @@
 </head>
 <body>
 		<div id="app">
-			{{name}}
+			  {{name}}
 		</div>
+
+
 		<script type="text/javascript" src="js/vue.js"></script>
 		<script type="text/javascript">
-			     let app = new Vue({ // 实例化一个app对象
-			     	 el:"#app",   // 绑定元素
+			     let app = new Vue({
+			     	 el:"#app",
 			     	 data:{
-			     	 	name:"小前端"
+			     	 	name:"font end"
 			     	 },
 			     	 beforeCreate(){
 			     	 	console.log("即将创建");
 			     	 	console.log(this.$data);
 			     	 	console.log(this.$el);
+			     	 },
+			     	 created(){
+			     	 	console.log("创建完毕");
+			     	 	console.log(this.$data);
+			     	 	console.log(this.$el);
 			     	 }
 			     })
 		</script>
+		<!-- 
+			此时,我们能读取到数据data的值,但是DOM还没生成,所以属性el还不存在,输出$data为一个Object对象,而$el的值为undefined
+		 -->
 </body>
 </html>

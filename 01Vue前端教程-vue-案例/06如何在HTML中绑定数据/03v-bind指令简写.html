@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>v-bind指令简写</title>
+</head>
+<body>
+		<div id="app">
+			<!-- 完整的写法 -->
+			<!-- <a v-bind:href="link">百度一下</a> -->
+			<!-- 简洁的写法 -->
+			<a :href="link">百度一下</a>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			      let vm = new Vue({
+			      	  el:"#app",
+			      	  data:{
+			      	  	 link:"http:www.baidu.com"
+			      	  }
+			      })
+			      /*
+					此外,需要注意的是:当渲染的属性值是布尔值的时候(true和false),效果就不一样了,并不是简单的将true或者false渲染出来,而是当值为false的时候,属性会被移除
+			      */
+		</script>
+</body>
+</html>

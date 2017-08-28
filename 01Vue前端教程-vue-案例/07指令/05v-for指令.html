@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>v-for指令</title>
+</head>
+<body>
+		<!--v-for指令 -->
+		<!--有时候,我们的data中的存放的数据不是个简单的数字或者字符串,而是数组Array类型,这个时候,我们要把数组的元素展示在视图上,就需要用到vue提供的v-for指令,来实现列表的渲染 -->
+		<div id="app">
+			  <div v-for="item in list">{{item}}</div>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+				 let vm = new Vue({
+				 	 el:"#app",
+				 	 data:{
+				 	 	list:['Tom','john','lisa']
+				 	 }
+				 })
+		</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>v-bind指令</title>
+</head>
+<body>
+		<div id="app">
+			  <a v-bind:href="link">中信e家</a>
+			  <!-- 等价于 -->
+			  <a :href="link">中信e家</a>
+		</div>
+
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			     let vm = new Vue({
+			     	 el:"#app",
+			     	 data:{
+			     	 	link:"http://www.citic.com"
+			     	 }
+			     })
+
+		</script>
+		<!-- 
+			 用v-bind指令来修饰href属性,表明它的值是一个动态的值,对应的则是data中的link的值
+		 -->
+</body>
+</html>
