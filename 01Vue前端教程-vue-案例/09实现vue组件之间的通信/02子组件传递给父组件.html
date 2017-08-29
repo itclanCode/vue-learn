@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+		<div id="app">
+			  <son @connect="say"></son>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			     Vue.component('son',{
+			     	templete:`
+			     	  <button @click="send">点击</button>
+			     	`,
+			     	methods:{
+			     		send(){
+			     			this.$emit('connect');
+			     		}
+			     	}
+			     })
+			     let vm = new Vue({
+			     		el:"#app",
+			     		methods:{
+			     			say(){
+			     				console.log("大家好,我监听到了事件connect的触发");
+			     			}
+			     		}
+			     	})
+		</script>
+
+</body>
+</html>
+<!-- 
+	我们去父组件监听这个事件,'connect',监听方式跟普通原生的事件一模一样,也是用v-on指令,缩写用@符号,我们采用缩写来监听
+	除了父子组件相互通信,非父子关系的组件该如何通信,我们可以巧妙的利用一个空的vue实例来作为一个中央事件总线
+
+ -->

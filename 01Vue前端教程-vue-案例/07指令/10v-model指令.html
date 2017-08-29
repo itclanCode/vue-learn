@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>v-model</title>
+</head>
+<body>
+		<div id="app">
+			<input type="text" v-model="msg" name="">
+			<p>你输入:{{msg}}</p>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			     let vm = new Vue({
+			     	 el:"#app",
+			     	 data:{
+			     	 	msg:''
+			     	 }
+			     });
+
+		</script>
+		<!-- 只要给input空间添加v-model指令,并指定关联的数据msg，我们就可以轻松的把用户输入的内容绑定在msg上,我们把msg的内容显示出来,看是不是跟用户输入的内容是同步更新的 -->
+</body>
+</html>

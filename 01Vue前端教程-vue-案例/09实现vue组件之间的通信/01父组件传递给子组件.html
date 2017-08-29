@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+		<div id="app">
+			  <son :message="msg"></son>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+				Vue.component('son',{
+					props:['message'],
+					template:`<div>{{message}}</div>`
+				})
+				let vm = new Vue({
+					el:"#app",
+					data:{
+						msg:"我是父组件的数据"
+					}
+				})
+		</script>
+</body>
+</html>
+<!-- 
+	组件可以接受参数props,这其实就是组件之间的一种通信方式:父组件->子组件传递数据
+	组件实例的作用域都是孤立的,也就是子组件在模板template不能引用父组件的数据,那么,当子组件有需要使用父组件的时候
+	我们使用的是组件的props选项来声明它想要获得的数据
+	props选项声明了它要接受的参数是message,而接收的对应的值是父组件的数据msg,我们在子组件顺利地把message展示出来
+    注意:props是单向绑定的(父-子),是vue为了防止子组件无意修改父组件的数据和状态,如果多个子组件任意地对父组件进行修改,这会让整个应用的数据流难以阅读
+    这就是父组件-子组件通信的实现,那么如果子组件向父组件传递数据
+    子组件-父组件
+    
+
+ -->

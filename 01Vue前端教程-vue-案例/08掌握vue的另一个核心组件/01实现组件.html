@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+		<!-- <div class="unit">
+			  <div class="content">
+			  	    <h1>这里是文章的标题</h1>
+			  		<div class="info">
+			  			  <span>2017年8月29日</span>
+			  			  <span class="original">原创</span>
+			  		</div>
+			  		<img src="movie.png" alt="">
+			  </div>
+		</div> -->
+		<div id="app">
+			  <!-- <my-article :detail="article"></my-article> -->
+			  <my-article v-for="item in articles" :detail="item">
+			  	
+			  </my-article>
+			  <!-- detail可以理解为形参,article可以理解为实参 -->
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			     /*Vue.component('my-article',{
+			     	template:`
+			     		<div class="unit">
+			              <div class="content">
+				  	          <h1>这里是文章的标题</h1>
+				  		      <div class="info">
+					  			  <span>2017年8月29日</span>
+					  			  <span class="original">原创</span>
+				  		      </div>
+				  		      <img src="movie.png" alt="">
+			           	  </div>
+		               </div>
+			     	`*/
+			     	Vue.component('my-article',{
+			     	props:['detail'],
+			     	template:`
+			     		<div>
+			              <div>
+				  	          <h1>{{detail.title}}</h1>
+				  		      <div>
+					  			  <span>{{detail.date}}</span>
+					  			  <span  v-show="detail.is_original">原创</span>
+				  		      </div>
+				  		      <img :src="detail.cover_url" alt="">
+			           	  </div>
+		               </div>
+			     	`
+			     })
+			     let vm = new Vue({
+			     		el:"#app",
+			     		data:{
+			     			 articles:[{
+			     			 	title:"第一节:vue.js框架",
+			     			 	data:"2017/8/29",
+			     			 	is_original:true,
+			     			 	cover_url:'./img/movie.png'
+			     			  },
+			     			  {
+			     			 	title:"第二节:vue.js框架",
+			     			 	data:"2017/8/29",
+			     			 	is_original:true,
+			     			 	cover_url:'./img/movie.png'
+			     			  },
+			     			  {
+			     			 	title:"第三节:vue.js框架",
+			     			 	data:"2017/8/29",
+			     			 	is_original:true,
+			     			 	cover_url:'./img/movie.png'
+			     			  },
+			     			  {
+			     			 	title:"第四节:vue.js框架",
+			     			 	data:"2017/8/29",
+			     			 	is_original:true,
+			     			 	cover_url:'./img/movie.png'
+			     			  },
+			     			 ]
+
+			     		}
+			     	})
+		</script>
+</body>
+</html>

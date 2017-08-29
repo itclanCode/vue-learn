@@ -2,13 +2,29 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>v-on指令</title>
 </head>
 <body>
 		<div id="app">
-			   
+			   <button v-on:click="say('Tom')">点击</button>
 		</div>
 
 		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+			     let vm = new Vue({
+			     	 el:"#app",
+			     	 methods:{
+			     	 		say(name){
+			     	 			console.log("你好"+name);
+			     	 		}
+			     	 }
+			     });
+
+		</script>
+		<!-- 
+			 methods:将被混入到vue实例中,可以直接通过vm实例访问这些方法,或者在指令表达式中使用
+			 注意:不应该使用箭头函数来定义method函数,理由是箭头函数绑定了父级作用域的上下文,所以this将不会按照期望指向vue实例,this.a将是undefined
+
+		 -->
 </body>
 </html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>动态绑定</title>
+</head>
+<body>
+		<div id="app">
+			 <!-- 对象的方式添加 -->
+			 <!-- <p :class="{'active':isActive,
+			 			 'danger':isDanger,
+			 			 'error':isError
+			 }">这是文字</p> -->
+			 <p :class="[activeClass,errorClass]">这是文字</p>
+		</div>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript">
+				 // 创建一个实例vm
+				 /*let vm = new Vue({
+				 	el:"#app",
+				 	data:{
+				 		isActive:true,
+				 		isDanger:true,
+				 		isError:false
+				 	}
+				 })*/
+				 let vm = new Vue({
+				 	el:"#app",
+				 	data:{
+				 		activeClass:'active',
+				 		errorClass:'error'
+				 	}
+				 })
+
+		</script>
+</body>
+</html>
